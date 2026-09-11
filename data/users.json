@@ -1,0 +1,5 @@
+[
+  { "name": "standard", "user": "standard_user", "pass": "secret_sauce", "shouldPass": true },
+  { "name": "locked out", "user": "locked_out_user", "pass": "secret_sauce", "shouldPass": false },
+  { "name": "invalid user", "user": "invalid_user", "pass": "invalid_sauce", "shouldPass": false }
+]
