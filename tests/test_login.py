@@ -1,4 +1,5 @@
 from playwright.sync_api import sync_playwright
+from playwright.sync_api import expect
 
 def test_valid_login():
     with sync_playwright() as p:
@@ -9,7 +10,7 @@ def test_valid_login():
         page.get_by_placeholder("Password").fill("secret_sauce")
         page.get_by_role("button", name="Login").click()
         assert "inventory" in page.url
-        assert page.get_by_text("Products").is_visible()
+        expect(page.get_by_text("Products")).to_be_visible()
         browser.close()
 
 def test_invalid_login():
